@@ -20,6 +20,7 @@ function handleCellClick(event) {
 function checkForWin() {
     // implement win condition logic here
     console.log('Implement win condition logic');
+    makeComputerMove();
 }
 
 document.querySelectorAll('td').forEach(cell => {
