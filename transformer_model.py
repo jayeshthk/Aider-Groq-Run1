@@ -23,3 +23,13 @@ class SelfAttention(nn.Module):
         output = attention_scores * value
         output = output.view(batch_size, seq_len, hidden_size)
         return output
+if __name__ == "__main__":
+    import torch
+    batch_size = 2
+    seq_len = 10
+    hidden_size = 128
+    num_heads = 4
+    x = torch.randn(batch_size, seq_len, hidden_size)
+    self_attention = SelfAttention(num_heads, hidden_size)
+    output = self_attention(x)
+    print(output.shape)
