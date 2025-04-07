@@ -30,7 +30,19 @@
     <div id="dino"></div>
   </div>
   <script>
-    // Add game logic here
+    let dino = document.getElementById('dino');
+    let x = 0;
+    let speed = 5;
+
+    function moveDino() {
+      x += speed;
+      dino.style.left = x + 'px';
+      if (x > 800 || x < 0) {
+        speed = -speed;
+      }
+    }
+
+    setInterval(moveDino, 16);
   </script>
 </body>
 </html>
