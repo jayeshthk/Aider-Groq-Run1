@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Dino Game</title>
-  <style>
-    body {
-      background-color: #f0f0f0;
-    }
-    #game-container {
-      width: 800px;
-      height: 600px;
-      border: 1px solid black;
-      margin: 40px auto;
-      padding: 20px;
-    }
-    #dino {
-      width: 100px;
-      height: 100px;
-      background-image: url('dino.png');
-      background-size: contain;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  </style>
-</head>
-<body>
-  <div id="game-container">
-    <div id="dino"></div>
-  </div>
-  <script>
-    let dino = document.getElementById('dino');
-    let x = 0;
-    let speed = 5;
-
-    function moveDino() {
-      x += speed;
-      dino.style.left = x + 'px';
-      if (x > 800 || x < 0) {
-        speed = -speed;
+  <head>
+    <title>Dino Game</title>
+    <style>
+      body {
+        background-color: #f0f0f0;
       }
-    }
+      #game-container {
+        width: 800px;
+        height: 600px;
+        border: 1px solid black;
+        margin: 40px auto;
+        padding: 20px;
+      }
+      #dino {
+        width: 100px;
+        height: 100px;
+        background-image: url("dino.png");
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-container">
+      <div id="dino"></div>
+    </div>
+    <script>
+      let dino = document.getElementById("dino");
+      let x = 0;
+      let speed = 5;
 
-    setInterval(moveDino, 16);
-  </script>
-</body>
+      function moveDino() {
+        x += speed;
+        dino.style.left = x + "px";
+        if (x > 800 || x < 0) {
+          speed = -speed;
+        }
+      }
+
+      setInterval(moveDino, 16);
+    </script>
+  </body>
 </html>

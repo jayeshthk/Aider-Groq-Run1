@@ -1,28 +1,28 @@
 let gameBoard = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', '']
+  ["", "", ""],
+  ["", "", ""],
+  ["", "", ""],
 ];
 
-let currentPlayer = 'X';
+let currentPlayer = "X";
 
 function handleCellClick(event) {
-    const row = event.target.parentNode.rowIndex;
-    const col = event.target.cellIndex;
-    if (gameBoard[row][col] === '') {
-        gameBoard[row][col] = currentPlayer;
-        event.target.textContent = currentPlayer;
-        checkForWin();
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    }
+  const row = event.target.parentNode.rowIndex;
+  const col = event.target.cellIndex;
+  if (gameBoard[row][col] === "") {
+    gameBoard[row][col] = currentPlayer;
+    event.target.textContent = currentPlayer;
+    checkForWin();
+    currentPlayer = currentPlayer === "X" ? "O" : "X";
+  }
 }
 
 function checkForWin() {
-    // implement win condition logic here
-    console.log('Implement win condition logic');
-    setTimeout(makeComputerMove, 500);
+  // implement win condition logic here
+  console.log("Implement win condition logic");
+  setTimeout(makeComputerMove, 500);
 }
 
-document.querySelectorAll('td').forEach(cell => {
-    cell.addEventListener('click', handleCellClick);
+document.querySelectorAll("td").forEach((cell) => {
+  cell.addEventListener("click", handleCellClick);
 });
